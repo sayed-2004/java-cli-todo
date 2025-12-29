@@ -3,9 +3,13 @@ import java.util.Scanner;
 
 public class TodoApp {
     private static final ArrayList<Task> tasks = new ArrayList<>();
+    private static final TaskStorage storage = new TaskStorage("tasks.txt");
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        tasks.addAll(storage.load());
+
 
         while (true) {
             System.out.println("\n== Java CLI To-Do ==");
@@ -47,6 +51,8 @@ public class TodoApp {
             return;
         }
         tasks.add(new Task(task));
+        storage.save(tasks);
+
         System.out.println("Added!");
     }
 }
