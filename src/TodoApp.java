@@ -20,6 +20,8 @@ public class TodoApp {
             } else if (choice.equals("0")) {
                 System.out.println("Bye!");
                 break;
+            } else if(choice.equals("2")){
+                addTask(sc);
             } else {
                 System.out.println("Invalid option.");
             }
@@ -35,5 +37,16 @@ public class TodoApp {
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println((i + 1) + ") " + tasks.get(i));
         }
+    }
+
+    private static void addTask(Scanner sc) {
+        System.out.print("Enter task: ");
+        String task = sc.nextLine().trim();
+        if (task.isEmpty()) {
+            System.out.println("Task cannot be empty.");
+            return;
+        }
+        tasks.add(task);
+        System.out.println("Added!");
     }
 }
