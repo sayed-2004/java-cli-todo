@@ -1,4 +1,4 @@
-# Java CLI To-Do List (Workshop Practice Project)
+# # Java Console To-Do App
 
 A simple command-line to-do list app written in Java.
 
