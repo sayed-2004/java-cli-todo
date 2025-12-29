@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TodoApp {
-    private static final ArrayList<String> tasks = new ArrayList<>();
+    private static final ArrayList<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -46,7 +46,7 @@ public class TodoApp {
             System.out.println("Task cannot be empty.");
             return;
         }
-        tasks.add(task);
+        tasks.add(new Task(task));
         System.out.println("Added!");
     }
 }
